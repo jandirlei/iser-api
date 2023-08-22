@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-//@Entity
+@Entity
 //@Table
 public class User {
 	
@@ -32,7 +32,7 @@ public class User {
     private LocalDateTime dataCadastro;
     private String key;
 
-    public static User convert(final UserDTO userDTO) {
+    public static User convert(UserDTO userDTO) {
         User user = new User();
         user.setNome(userDTO.getNome());
         user.setEndereco(userDTO.getEndereco());

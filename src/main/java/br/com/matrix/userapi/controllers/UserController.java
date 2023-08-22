@@ -23,7 +23,7 @@ import jakarta.validation.Valid;
 public class UserController {
 	
 	@GetMapping("/")
-	public String getMessagem() {
+	public String getMenssagem() {
 		return "Spring boot is working!";
 	}
 	

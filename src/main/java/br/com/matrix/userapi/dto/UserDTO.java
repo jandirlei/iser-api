@@ -3,6 +3,7 @@ package br.com.matrix.userapi.dto;
 import java.sql.Date;
 import java.time.LocalDateTime;
 
+import br.com.matrix.userapi.model.User;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,4 +30,16 @@ public class UserDTO {
     private LocalDateTime dataCadastro;
  
     private String key;
+
+    public static UserDTO convert(User user) {
+        UserDTO	userDTO = new UserDTO();
+        userDTO.setNome(user.getNome());
+        userDTO.setEndereco(user.getEndereco());
+        userDTO.setCpf(user.getCpf());
+        userDTO.setEmail(user.getEmail());
+        userDTO.setTelefone(user.getTelefone());
+        userDTO.setDataCadastro(user.getDataCadastro()); 
+        return userDTO;
+    }
+
 }
