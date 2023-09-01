@@ -31,7 +31,7 @@ public class UserService {
 	
 	public UserDTO save(UserDTO userDTO) {
 		userDTO.setDataCadastro(LocalDateTime.now());
-		User user = userRepository.save(userDTO);
+		User user = userRepository.save(User.convert(userDTO));
 		return UserDTO.convert(user);
 	}
 	
@@ -72,8 +72,9 @@ public class UserService {
 		return UserDTO.convert(user);
 	}
 	
-	public Page<UserDTO> getAllPages(Pageable page){
+	public Page<UserDTO> getAllPage(Pageable page){
 		Page<User> users = userRepository.findAll(page);
 		return users.map(UserDTO::convert);
 	}
+	
 }

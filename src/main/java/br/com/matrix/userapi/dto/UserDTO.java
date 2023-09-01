@@ -1,6 +1,5 @@
 package br.com.matrix.userapi.dto;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 import br.com.matrix.userapi.model.User;
@@ -28,17 +27,18 @@ public class UserDTO {
     private String telefone;
     
     private LocalDateTime dataCadastro;
- 
+    
     private String key;
-
+ 
     public static UserDTO convert(User user) {
         UserDTO	userDTO = new UserDTO();
         userDTO.setNome(user.getNome());
-        userDTO.setEndereco(user.getEndereco());
         userDTO.setCpf(user.getCpf());
+        userDTO.setEndereco(user.getEndereco());
         userDTO.setEmail(user.getEmail());
         userDTO.setTelefone(user.getTelefone());
         userDTO.setDataCadastro(user.getDataCadastro()); 
+        userDTO.setKey(user.getKey());
         return userDTO;
     }
 

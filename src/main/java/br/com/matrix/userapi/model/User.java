@@ -1,6 +1,5 @@
 package br.com.matrix.userapi.model;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 import br.com.matrix.userapi.dto.UserDTO;
@@ -8,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +16,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-//@Table
 public class User {
 	
 	@Id
@@ -35,8 +33,8 @@ public class User {
     public static User convert(UserDTO userDTO) {
         User user = new User();
         user.setNome(userDTO.getNome());
-        user.setEndereco(userDTO.getEndereco());
         user.setCpf(userDTO.getCpf());
+        user.setEndereco(userDTO.getEndereco());
         user.setEmail(userDTO.getEmail());
         user.setTelefone(userDTO.getTelefone());
         user.setDataCadastro(userDTO.getDataCadastro()); 
